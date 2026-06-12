@@ -1,0 +1,29 @@
+trigger_zone_action:
+  name: Trigger Zone Action
+  description: Trigger configured action for selected zone.
+  fields:
+    entry_id:
+      name: Entry ID
+      description: Optional config entry id when multiple Luba Manager entries exist.
+      selector:
+        text:
+    zone_id:
+      name: Zone ID
+      description: Zone identifier, for example zone_1.
+      selector:
+        text:
+    zone_name:
+      name: Zone name
+      description: Alternative to zone_id, matched case-insensitively.
+      selector:
+        text:
+
+trigger_best_zone_action:
+  name: Trigger Best Zone Action
+  description: Trigger configured action for currently best-scored zone.
+  fields:
+    entry_id:
+      name: Entry ID
+      description: Optional config entry id when multiple Luba Manager entries exist.
+      selector:
+        text:

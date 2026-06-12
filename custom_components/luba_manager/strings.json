@@ -22,15 +22,19 @@
           "zone_1_name": "Zone 1 name",
           "zone_1_area": "Zone 1 area (m²)",
           "zone_1_drying_speed": "Zone 1 drying speed",
+          "zone_1_action": "Zone 1 action",
           "zone_2_name": "Zone 2 name",
           "zone_2_area": "Zone 2 area (m²)",
           "zone_2_drying_speed": "Zone 2 drying speed",
+          "zone_2_action": "Zone 2 action",
           "zone_3_name": "Zone 3 name",
           "zone_3_area": "Zone 3 area (m²)",
           "zone_3_drying_speed": "Zone 3 drying speed",
+          "zone_3_action": "Zone 3 action",
           "zone_4_name": "Zone 4 name",
           "zone_4_area": "Zone 4 area (m²)",
-          "zone_4_drying_speed": "Zone 4 drying speed"
+          "zone_4_drying_speed": "Zone 4 drying speed",
+          "zone_4_action": "Zone 4 action"
         }
       },
       "zones": {
@@ -61,15 +65,19 @@
           "zone_1_name": "Zone 1 name",
           "zone_1_area": "Zone 1 area (m²)",
           "zone_1_drying_speed": "Zone 1 drying speed",
+          "zone_1_action": "Zone 1 action",
           "zone_2_name": "Zone 2 name",
           "zone_2_area": "Zone 2 area (m²)",
           "zone_2_drying_speed": "Zone 2 drying speed",
+          "zone_2_action": "Zone 2 action",
           "zone_3_name": "Zone 3 name",
           "zone_3_area": "Zone 3 area (m²)",
           "zone_3_drying_speed": "Zone 3 drying speed",
+          "zone_3_action": "Zone 3 action",
           "zone_4_name": "Zone 4 name",
           "zone_4_area": "Zone 4 area (m²)",
-          "zone_4_drying_speed": "Zone 4 drying speed"
+          "zone_4_drying_speed": "Zone 4 drying speed",
+          "zone_4_action": "Zone 4 action"
         }
       },
       "zones": {

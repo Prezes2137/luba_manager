@@ -12,6 +12,7 @@ from .const import (
     CONF_USE_WEATHER_ENTITY,
     CONF_WEATHER_ENTITY_ID,
     CONF_ZONE_AREA,
+    CONF_ZONE_ACTION,
     CONF_ZONE_COUNT,
     CONF_ZONE_DRYING_SPEED,
     CONF_ZONE_ID,
@@ -26,6 +27,7 @@ from .const import (
     DEFAULT_USE_WEATHER_ENTITY,
     DEFAULT_WEATHER_ENTITY_ID,
     DEFAULT_ZONE_AREA,
+    DEFAULT_ZONE_ACTION,
     DEFAULT_ZONE_COUNT,
     DEFAULT_ZONE_DRYING_SPEED,
     DEFAULT_ZONE_NAMES,
@@ -148,6 +150,10 @@ def build_zone_schema(zone_count, zone_defaults=None):
                 mode=selector.SelectSelectorMode.DROPDOWN,
             )
         )
+        schema[vol.Required(
+            f"zone_{zone_number}_action",
+            default=zone_default.get(CONF_ZONE_ACTION, DEFAULT_ZONE_ACTION),
+        )] = vol.All(str, vol.Length(min=1))
 
     return vol.Schema(schema)
 
@@ -165,6 +171,7 @@ def build_zones(user_input, zone_count):
                 CONF_ZONE_DRYING_SPEED: _normalize_drying_level(
                     user_input[f"zone_{zone_number}_drying_speed"]
                 ),
+                CONF_ZONE_ACTION: user_input[f"zone_{zone_number}_action"].strip(),
             }
         )
 

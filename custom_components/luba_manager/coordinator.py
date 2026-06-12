@@ -10,6 +10,7 @@ from .const import (
     CONF_USE_WEATHER_ENTITY,
     CONF_WEATHER_ENTITY_ID,
     CONF_ZONE_AREA,
+    CONF_ZONE_ACTION,
     CONF_ZONE_DRYING_SPEED,
     CONF_ZONE_ID,
     CONF_ZONE_NAME,
@@ -100,6 +101,7 @@ class LubaCoordinator(DataUpdateCoordinator):
         zones = self._value(CONF_ZONES, [])
         scores = {}
         zone_names = {}
+        zone_actions = {}
 
         for zone in zones:
             zone_id = zone.get(CONF_ZONE_ID) or _normalize_key(zone.get(CONF_ZONE_NAME))
@@ -118,6 +120,7 @@ class LubaCoordinator(DataUpdateCoordinator):
 
             scores[zone_id] = score
             zone_names[zone_id] = zone_name
+            zone_actions[zone_id] = zone.get(CONF_ZONE_ACTION)
 
         best_zone_id = max(scores, key=scores.get) if scores else None
         queue_ids = sorted(scores, key=scores.get, reverse=True)[:2] if scores else []
@@ -132,5 +135,6 @@ class LubaCoordinator(DataUpdateCoordinator):
             "use_outdoor_temp_entity": use_temp_entity,
             "queue": [zone_names.get(zone_id, zone_id) for zone_id in queue_ids],
             "scores": scores,
+            "zone_actions": zone_actions,
             "zones": zones,
         }

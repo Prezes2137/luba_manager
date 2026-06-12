@@ -15,6 +15,7 @@ CONF_ZONE_ID = "id"
 CONF_ZONE_NAME = "name"
 CONF_ZONE_AREA = "area"
 CONF_ZONE_DRYING_SPEED = "drying_speed"
+CONF_ZONE_ACTION = "action"
 
 MIN_ZONE_COUNT = 1
 MAX_ZONE_COUNT = 20
@@ -32,3 +33,4 @@ DEFAULT_ZONE_COUNT = 4
 DEFAULT_ZONE_NAMES = ["front", "tyl", "lacznik", "bagno"]
 DEFAULT_ZONE_AREA = 500.0
 DEFAULT_ZONE_DRYING_SPEED = "normalna"
+DEFAULT_ZONE_ACTION = "test_notify"
