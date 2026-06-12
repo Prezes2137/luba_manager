@@ -1,0 +1,11 @@
+{
+  "title": "Luba Manager",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Luba Manager Setup",
+        "description": "Smart lawn mowing system configuration"
+      }
+    }
+  }
+}

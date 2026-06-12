@@ -1,0 +1,5 @@
+{
+  "name": "Luba Manager",
+  "description": "Smart autonomous mowing scheduler for Luba robot mower",
+  "render_readme": true
+}

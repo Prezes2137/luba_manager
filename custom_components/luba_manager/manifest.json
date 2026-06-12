@@ -1,0 +1,11 @@
+{
+  "domain": "luba_manager",
+  "name": "Luba Smart Lawn Manager",
+  "version": "1.0.0",
+  "documentation": "https://github.com/YOUR_GITHUB/luba_manager",
+  "issue_tracker": "https://github.com/YOUR_GITHUB/luba_manager/issues",
+  "dependencies": [],
+  "codeowners": ["@YOUR_GITHUB"],
+  "config_flow": true,
+  "iot_class": "local_polling"
+}
