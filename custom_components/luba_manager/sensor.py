@@ -29,5 +29,9 @@ class LubaBestSensor(CoordinatorEntity, SensorEntity):
             "queue": data.get("queue", []),
             "scores": data.get("scores", {}),
             "mower_entity_id": data.get("mower_entity_id"),
+            "weather_entity_id": data.get("weather_entity_id"),
+            "outdoor_temp_entity_id": data.get("outdoor_temp_entity_id"),
+            "use_weather_entity": data.get("use_weather_entity"),
+            "use_outdoor_temp_entity": data.get("use_outdoor_temp_entity"),
             "zones": data.get("zones", []),
         }
