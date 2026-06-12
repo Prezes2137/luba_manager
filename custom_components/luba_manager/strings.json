@@ -1,111 +1,81 @@
 {
-	"title": "Luba Manager",
-	"config": {
-		"error": {
-			"duplicate_zone_names": "Zone names must be unique"
-		},
-		"step": {
-			"user": {
-				"title": "Luba Manager Setup",
-				"description": "Configure entities and scheduler options",
-				"data": {
-					"mower_entity_id": "Mower entity",
-					"weather_entity_id": "Weather entity",
-					"outdoor_temp_entity_id": "Outdoor temperature sensor",
-					"use_weather_entity": "Use weather entity",
-					"use_outdoor_temp_entity": "Use outdoor temperature sensor",
-					"temp_min": "Minimum temperature",
-					"temp_max": "Maximum temperature",
-					"rain_block": "Rain block threshold",
-					"max_daily_runs": "Maximum daily runs",
-					"zone_count": "Number of zones",
-					"zone_1_name": "Zone 1 name",
-					"zone_1_area": "Zone 1 area",
-					"zone_1_drying_speed": "Zone 1 drying speed",
-					"zone_2_name": "Zone 2 name",
-					"zone_2_area": "Zone 2 area",
-					"zone_2_drying_speed": "Zone 2 drying speed",
-					"zone_3_name": "Zone 3 name",
-					"zone_3_area": "Zone 3 area",
-					"zone_3_drying_speed": "Zone 3 drying speed",
-					"zone_4_name": "Zone 4 name",
-					"zone_4_area": "Zone 4 area",
-					"zone_4_drying_speed": "Zone 4 drying speed"
-				}
-			},
-			"zones": {
-				"title": "Zone Details",
-				"description": "Set zone name, area and drying speed"
-			}
-		}
-	},
-	"options": {
-		"error": {
-			"duplicate_zone_names": "Zone names must be unique"
-		},
-		"step": {
-			"init": {
-				"title": "Luba Manager Options",
-				"description": "Adjust entities and scheduler options",
-				"data": {
-					"mower_entity_id": "Mower entity",
-					"weather_entity_id": "Weather entity",
-					"outdoor_temp_entity_id": "Outdoor temperature sensor",
-					"use_weather_entity": "Use weather entity",
-					"use_outdoor_temp_entity": "Use outdoor temperature sensor",
-					"temp_min": "Minimum temperature",
-					"temp_max": "Maximum temperature",
-					"rain_block": "Rain block threshold",
-					"max_daily_runs": "Maximum daily runs",
-					"zone_count": "Number of zones",
-					"zone_1_name": "Zone 1 name",
-					"zone_1_area": "Zone 1 area",
-					"zone_1_drying_speed": "Zone 1 drying speed",
-					"zone_2_name": "Zone 2 name",
-					"zone_2_area": "Zone 2 area",
-					"zone_2_drying_speed": "Zone 2 drying speed",
-					"zone_3_name": "Zone 3 name",
-					"zone_3_area": "Zone 3 area",
-					"zone_3_drying_speed": "Zone 3 drying speed",
-					"zone_4_name": "Zone 4 name",
-					"zone_4_area": "Zone 4 area",
-					"zone_4_drying_speed": "Zone 4 drying speed"
-				}
-			}
-		}
-	},
-	"options": {
-		"error": {
-			"duplicate_zone_names": "Zone names must be unique"
-		},
-		"step": {
-			"init": {
-				"title": "Luba Manager Options",
-				"description": "Adjust the mower entity and zone settings",
-				"data": {
-					"mower_entity_id": "Mower entity",
-					"temp_min": "Minimum temperature",
-					"temp_max": "Maximum temperature",
-					"rain_block": "Rain block threshold",
-					"max_daily_runs": "Maximum daily runs",
-					"zone_1_name": "Zone 1 name",
-					"zone_1_area": "Zone 1 area",
-					"zone_1_drying_speed": "Zone 1 drying speed",
-					"zone_2_name": "Zone 2 name",
-					"zone_2_area": "Zone 2 area",
-					"zone_2_drying_speed": "Zone 2 drying speed",
-					"zone_3_name": "Zone 3 name",
-					"zone_3_area": "Zone 3 area",
-					"zone_3_drying_speed": "Zone 3 drying speed",
-					"zone_4_name": "Zone 4 name",
-					"zone_4_area": "Zone 4 area",
-					"zone_4_drying_speed": "Zone 4 drying speed"
-				}
-			},
-			"zones": {
-				"title": "Zone Details",
-				"description": "Set zone name, area and drying speed"
-			}
-		}
-	}
+  "title": "Luba Manager",
+  "config": {
+    "error": {
+      "duplicate_zone_names": "Zone names must be unique"
+    },
+    "step": {
+      "user": {
+        "title": "Luba Manager Setup",
+        "description": "Configure entities and scheduler options",
+        "data": {
+          "mower_entity_id": "Mower entity",
+          "weather_entity_id": "Weather entity",
+          "outdoor_temp_entity_id": "Outdoor temperature sensor",
+          "use_weather_entity": "Use weather entity",
+          "use_outdoor_temp_entity": "Use outdoor temperature sensor",
+          "temp_min": "Minimum temperature",
+          "temp_max": "Maximum temperature",
+          "rain_block": "Rain block threshold",
+          "max_daily_runs": "Maximum daily runs",
+          "zone_count": "Number of zones",
+          "zone_1_name": "Zone 1 name",
+          "zone_1_area": "Zone 1 area (m²)",
+          "zone_1_drying_speed": "Zone 1 drying speed",
+          "zone_2_name": "Zone 2 name",
+          "zone_2_area": "Zone 2 area (m²)",
+          "zone_2_drying_speed": "Zone 2 drying speed",
+          "zone_3_name": "Zone 3 name",
+          "zone_3_area": "Zone 3 area (m²)",
+          "zone_3_drying_speed": "Zone 3 drying speed",
+          "zone_4_name": "Zone 4 name",
+          "zone_4_area": "Zone 4 area (m²)",
+          "zone_4_drying_speed": "Zone 4 drying speed"
+        }
+      },
+      "zones": {
+        "title": "Zone Details",
+        "description": "Set zone name, area and drying speed"
+      }
+    }
+  },
+  "options": {
+    "error": {
+      "duplicate_zone_names": "Zone names must be unique"
+    },
+    "step": {
+      "init": {
+        "title": "Luba Manager Options",
+        "description": "Adjust entities and scheduler options",
+        "data": {
+          "mower_entity_id": "Mower entity",
+          "weather_entity_id": "Weather entity",
+          "outdoor_temp_entity_id": "Outdoor temperature sensor",
+          "use_weather_entity": "Use weather entity",
+          "use_outdoor_temp_entity": "Use outdoor temperature sensor",
+          "temp_min": "Minimum temperature",
+          "temp_max": "Maximum temperature",
+          "rain_block": "Rain block threshold",
+          "max_daily_runs": "Maximum daily runs",
+          "zone_count": "Number of zones",
+          "zone_1_name": "Zone 1 name",
+          "zone_1_area": "Zone 1 area (m²)",
+          "zone_1_drying_speed": "Zone 1 drying speed",
+          "zone_2_name": "Zone 2 name",
+          "zone_2_area": "Zone 2 area (m²)",
+          "zone_2_drying_speed": "Zone 2 drying speed",
+          "zone_3_name": "Zone 3 name",
+          "zone_3_area": "Zone 3 area (m²)",
+          "zone_3_drying_speed": "Zone 3 drying speed",
+          "zone_4_name": "Zone 4 name",
+          "zone_4_area": "Zone 4 area (m²)",
+          "zone_4_drying_speed": "Zone 4 drying speed"
+        }
+      },
+      "zones": {
+        "title": "Zone Details",
+        "description": "Set zone name, area and drying speed"
+      }
+    }
+  }
 }

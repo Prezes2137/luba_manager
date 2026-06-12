@@ -34,6 +34,12 @@ from .const import (
 )
 
 
+DRYING_OPTIONS = [
+    selector.SelectOptionDict(value="powolna", label="powolna"),
+    selector.SelectOptionDict(value="normalna", label="normalna"),
+]
+
+
 def _default_zone_name(index):
     if index < len(DEFAULT_ZONE_NAMES):
         return DEFAULT_ZONE_NAMES[index]
@@ -42,6 +48,13 @@ def _default_zone_name(index):
 
 def _clamp_zone_count(value):
     return max(MIN_ZONE_COUNT, min(MAX_ZONE_COUNT, value))
+
+
+def _normalize_drying_level(value):
+    text = str(value or "").strip().casefold()
+    if text in {"powolna", "slow", "0", "0.0"}:
+        return "powolna"
+    return "normalna"
 
 
 def build_general_schema(defaults):
@@ -117,11 +130,24 @@ def build_zone_schema(zone_count, zone_defaults=None):
         schema[vol.Required(
             f"zone_{zone_number}_area",
             default=zone_default.get(CONF_ZONE_AREA, DEFAULT_ZONE_AREA),
-        )] = vol.All(vol.Coerce(float), vol.Range(min=0.1))
+        )] = selector.NumberSelector(
+            selector.NumberSelectorConfig(
+                min=0.1,
+                mode=selector.NumberSelectorMode.BOX,
+                unit_of_measurement="m²",
+            )
+        )
         schema[vol.Required(
             f"zone_{zone_number}_drying_speed",
-            default=zone_default.get(CONF_ZONE_DRYING_SPEED, DEFAULT_ZONE_DRYING_SPEED),
-        )] = vol.All(vol.Coerce(float), vol.Range(min=0.0))
+            default=_normalize_drying_level(
+                zone_default.get(CONF_ZONE_DRYING_SPEED, DEFAULT_ZONE_DRYING_SPEED)
+            ),
+        )] = selector.SelectSelector(
+            selector.SelectSelectorConfig(
+                options=DRYING_OPTIONS,
+                mode=selector.SelectSelectorMode.DROPDOWN,
+            )
+        )
 
     return vol.Schema(schema)
 
@@ -136,7 +162,9 @@ def build_zones(user_input, zone_count):
                 CONF_ZONE_ID: f"zone_{zone_number}",
                 CONF_ZONE_NAME: user_input[f"zone_{zone_number}_name"].strip(),
                 CONF_ZONE_AREA: float(user_input[f"zone_{zone_number}_area"]),
-                CONF_ZONE_DRYING_SPEED: float(user_input[f"zone_{zone_number}_drying_speed"]),
+                CONF_ZONE_DRYING_SPEED: _normalize_drying_level(
+                    user_input[f"zone_{zone_number}_drying_speed"]
+                ),
             }
         )
 

@@ -20,17 +20,17 @@
           "max_daily_runs": "Maksymalna liczba uruchomień dziennie",
           "zone_count": "Liczba stref",
           "zone_1_name": "Nazwa strefy 1",
-          "zone_1_area": "Powierzchnia strefy 1",
-          "zone_1_drying_speed": "Prędkość wysychania strefy 1",
+          "zone_1_area": "Powierzchnia strefy 1 (m²)",
+          "zone_1_drying_speed": "Prędkość schnięcia strefy 1",
           "zone_2_name": "Nazwa strefy 2",
-          "zone_2_area": "Powierzchnia strefy 2",
-          "zone_2_drying_speed": "Prędkość wysychania strefy 2",
+          "zone_2_area": "Powierzchnia strefy 2 (m²)",
+          "zone_2_drying_speed": "Prędkość schnięcia strefy 2",
           "zone_3_name": "Nazwa strefy 3",
-          "zone_3_area": "Powierzchnia strefy 3",
-          "zone_3_drying_speed": "Prędkość wysychania strefy 3",
+          "zone_3_area": "Powierzchnia strefy 3 (m²)",
+          "zone_3_drying_speed": "Prędkość schnięcia strefy 3",
           "zone_4_name": "Nazwa strefy 4",
-          "zone_4_area": "Powierzchnia strefy 4",
-          "zone_4_drying_speed": "Prędkość wysychania strefy 4"
+          "zone_4_area": "Powierzchnia strefy 4 (m²)",
+          "zone_4_drying_speed": "Prędkość schnięcia strefy 4"
         }
       },
       "zones": {
@@ -59,17 +59,17 @@
           "max_daily_runs": "Maksymalna liczba uruchomień dziennie",
           "zone_count": "Liczba stref",
           "zone_1_name": "Nazwa strefy 1",
-          "zone_1_area": "Powierzchnia strefy 1",
-          "zone_1_drying_speed": "Prędkość wysychania strefy 1",
+          "zone_1_area": "Powierzchnia strefy 1 (m²)",
+          "zone_1_drying_speed": "Prędkość schnięcia strefy 1",
           "zone_2_name": "Nazwa strefy 2",
-          "zone_2_area": "Powierzchnia strefy 2",
-          "zone_2_drying_speed": "Prędkość wysychania strefy 2",
+          "zone_2_area": "Powierzchnia strefy 2 (m²)",
+          "zone_2_drying_speed": "Prędkość schnięcia strefy 2",
           "zone_3_name": "Nazwa strefy 3",
-          "zone_3_area": "Powierzchnia strefy 3",
-          "zone_3_drying_speed": "Prędkość wysychania strefy 3",
+          "zone_3_area": "Powierzchnia strefy 3 (m²)",
+          "zone_3_drying_speed": "Prędkość schnięcia strefy 3",
           "zone_4_name": "Nazwa strefy 4",
-          "zone_4_area": "Powierzchnia strefy 4",
-          "zone_4_drying_speed": "Prędkość wysychania strefy 4"
+          "zone_4_area": "Powierzchnia strefy 4 (m²)",
+          "zone_4_drying_speed": "Prędkość schnięcia strefy 4"
         }
       },
       "zones": {

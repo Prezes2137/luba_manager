@@ -1,3 +1,5 @@
+import logging
+
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from datetime import timedelta
 from .utils import base_score
@@ -15,6 +17,9 @@ from .const import (
 )
 
 
+_LOGGER = logging.getLogger(__name__)
+
+
 def _normalize_key(value):
     return str(value or "").strip().casefold().replace(" ", "_")
 
@@ -24,6 +29,15 @@ def _safe_float(value, default=0.0):
         return float(value)
     except (TypeError, ValueError):
         return default
+
+
+def _drying_bonus(value):
+    text = str(value or "").strip().casefold()
+    if text in {"powolna", "slow", "0", "0.0"}:
+        return 1.5
+    if text in {"normalna", "normal", "1", "1.0"}:
+        return 3.0
+    return max(0.0, _safe_float(value, 0.0) * 3.0)
 
 
 def _state_or_none(hass, entity_id):
@@ -53,6 +67,7 @@ class LubaCoordinator(DataUpdateCoordinator):
     def __init__(self, hass, config, options):
         super().__init__(
             hass,
+            _LOGGER,
             name="luba_manager",
             update_interval=timedelta(minutes=15),
         )
@@ -90,11 +105,11 @@ class LubaCoordinator(DataUpdateCoordinator):
             zone_id = zone.get(CONF_ZONE_ID) or _normalize_key(zone.get(CONF_ZONE_NAME))
             zone_name = zone.get(CONF_ZONE_NAME) or zone_id
             area = _safe_float(zone.get(CONF_ZONE_AREA, 0))
-            drying_speed = _safe_float(zone.get(CONF_ZONE_DRYING_SPEED, 0))
+            drying_bonus = _drying_bonus(zone.get(CONF_ZONE_DRYING_SPEED, "normalna"))
 
             score = base
             score += min(area / 50.0, 20)
-            score += drying_speed * 3
+            score += drying_bonus
 
             if last_zone and last_zone in {zone_id, _normalize_key(zone_name)}:
                 score -= 20
