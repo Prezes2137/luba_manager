@@ -1,10 +1,62 @@
 {
   "title": "Luba Manager",
   "config": {
+    "error": {
+      "duplicate_zone_names": "Nazwy stref muszą być unikalne"
+    },
     "step": {
       "user": {
         "title": "Konfiguracja Luba",
-        "description": "System zarządzania koszeniem trawnika"
+        "description": "Skonfiguruj encję kosiarki i swoje strefy",
+        "data": {
+          "mower_entity_id": "Encja kosiarki",
+          "temp_min": "Minimalna temperatura",
+          "temp_max": "Maksymalna temperatura",
+          "rain_block": "Próg blokady deszczu",
+          "max_daily_runs": "Maksymalna liczba uruchomień dziennie",
+          "zone_1_name": "Nazwa strefy 1",
+          "zone_1_area": "Powierzchnia strefy 1",
+          "zone_1_drying_speed": "Prędkość wysychania strefy 1",
+          "zone_2_name": "Nazwa strefy 2",
+          "zone_2_area": "Powierzchnia strefy 2",
+          "zone_2_drying_speed": "Prędkość wysychania strefy 2",
+          "zone_3_name": "Nazwa strefy 3",
+          "zone_3_area": "Powierzchnia strefy 3",
+          "zone_3_drying_speed": "Prędkość wysychania strefy 3",
+          "zone_4_name": "Nazwa strefy 4",
+          "zone_4_area": "Powierzchnia strefy 4",
+          "zone_4_drying_speed": "Prędkość wysychania strefy 4"
+        }
+      }
+    }
+  },
+  "options": {
+    "error": {
+      "duplicate_zone_names": "Nazwy stref muszą być unikalne"
+    },
+    "step": {
+      "init": {
+        "title": "Opcje Luba Manager",
+        "description": "Dostosuj encję kosiarki i ustawienia stref",
+        "data": {
+          "mower_entity_id": "Encja kosiarki",
+          "temp_min": "Minimalna temperatura",
+          "temp_max": "Maksymalna temperatura",
+          "rain_block": "Próg blokady deszczu",
+          "max_daily_runs": "Maksymalna liczba uruchomień dziennie",
+          "zone_1_name": "Nazwa strefy 1",
+          "zone_1_area": "Powierzchnia strefy 1",
+          "zone_1_drying_speed": "Prędkość wysychania strefy 1",
+          "zone_2_name": "Nazwa strefy 2",
+          "zone_2_area": "Powierzchnia strefy 2",
+          "zone_2_drying_speed": "Prędkość wysychania strefy 2",
+          "zone_3_name": "Nazwa strefy 3",
+          "zone_3_area": "Powierzchnia strefy 3",
+          "zone_3_drying_speed": "Prędkość wysychania strefy 3",
+          "zone_4_name": "Nazwa strefy 4",
+          "zone_4_area": "Powierzchnia strefy 4",
+          "zone_4_drying_speed": "Prędkość wysychania strefy 4"
+        }
       }
     }
   }

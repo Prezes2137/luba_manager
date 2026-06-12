@@ -1,25 +1,40 @@
-import voluptuous as vol
 from homeassistant import config_entries
+from homeassistant.core import callback
 
-DOMAIN = "luba_manager"
+from .const import DOMAIN, CONF_ZONES
+from .flow_utils import build_schema, build_zones, validate_zone_names
 
 class LubaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     VERSION = 1
 
+    @staticmethod
+    @callback
+    def async_get_options_flow(config_entry):
+        from .options_flow import LubaOptionsFlow
+
+        return LubaOptionsFlow(config_entry)
+
     async def async_step_user(self, user_input=None):
+        errors = {}
 
         if user_input is not None:
-            return self.async_create_entry(
-                title="Luba Manager",
-                data=user_input
-            )
+            zones = build_zones(user_input)
 
-        schema = vol.Schema({
-            vol.Optional("temp_min", default=10): int,
-            vol.Optional("temp_max", default=28): int,
-            vol.Optional("rain_block", default=70): int,
-            vol.Optional("max_daily_runs", default=2): int,
-        })
+            if not validate_zone_names(zones):
+                errors["base"] = "duplicate_zone_names"
+            else:
+                data = {
+                    key: value
+                    for key, value in user_input.items()
+                    if not key.startswith("zone_")
+                }
+                data[CONF_ZONES] = zones
 
-        return self.async_show_form(step_id="user", data_schema=schema)
+                return self.async_create_entry(title="Luba Manager", data=data)
+
+        return self.async_show_form(
+            step_id="user",
+            data_schema=build_schema(user_input or {}),
+            errors=errors,
+        )

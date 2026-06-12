@@ -1,3 +1,23 @@
 DOMAIN = "luba_manager"
 
-ZONES = ["front", "tyl", "lacznik", "bagno"]
+CONF_MOWER_ENTITY_ID = "mower_entity_id"
+CONF_TEMP_MIN = "temp_min"
+CONF_TEMP_MAX = "temp_max"
+CONF_RAIN_BLOCK = "rain_block"
+CONF_MAX_DAILY_RUNS = "max_daily_runs"
+CONF_ZONES = "zones"
+CONF_ZONE_ID = "id"
+CONF_ZONE_NAME = "name"
+CONF_ZONE_AREA = "area"
+CONF_ZONE_DRYING_SPEED = "drying_speed"
+
+ZONE_COUNT = 4
+
+DEFAULT_TEMP_MIN = 10
+DEFAULT_TEMP_MAX = 28
+DEFAULT_RAIN_BLOCK = 70
+DEFAULT_MAX_DAILY_RUNS = 2
+
+DEFAULT_ZONE_NAMES = ["front", "tyl", "lacznik", "bagno"]
+DEFAULT_ZONE_AREA = 500.0
+DEFAULT_ZONE_DRYING_SPEED = 1.0
